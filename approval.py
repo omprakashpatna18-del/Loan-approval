@@ -12,6 +12,15 @@ class Loan(BaseModel):
   loan_id:str
   no_of_dependents:int
   loan_amount:float
-  cibil:int
+  cibil_score:int
+  loan_amount:float
+  education:str
+  self-employed:str
+  loan_term:int
+  residential_assets_value:float
+  commercial_assets_value:float
+  luxury_assets_value:float
+  bank_asset_value:float
+  
   
 
