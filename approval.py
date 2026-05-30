@@ -9,7 +9,6 @@ from fastapi import APIRouter
 from pydantic import BaseModel
 model=joblib.load("best_model.joblib")
 class Loan(BaseModel):
-  loan_id:str
   no_of_dependents:int
   loan_amount:float
   cibil_score:int
@@ -22,9 +21,8 @@ class Loan(BaseModel):
   luxury_assets_value:float
   bank_asset_value:float
   
-def helper(data):
+def helper(data:Loan):
   raw={
-    "loan_id":data.get("loan_id"),
     "no_of_dependents":data.get("no_of_dependents"),
     "loan_amount":data.get("loan_amount"),
     "cibil_score":data.get("cibil_score"),
@@ -37,5 +35,10 @@ def helper(data):
   "luxury_assets_value":data.get("luxury_assets_value"),
   "bank_asset_value":data.get("bank_asset_value")
                       }
+  return model_df
+  def predict(model_df):
+    predict=model.predict(data)[0]
+    return predict
+    
     
 
