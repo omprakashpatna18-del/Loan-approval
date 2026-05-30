@@ -22,5 +22,20 @@ class Loan(BaseModel):
   luxury_assets_value:float
   bank_asset_value:float
   
-  
+def helper(data):
+  raw={
+    "loan_id":data.get("loan_id"),
+    "no_of_dependents":data.get("no_of_dependents"),
+    "loan_amount":data.get("loan_amount"),
+    "cibil_score":data.get("cibil_score"),
+  "loan_amount":data.get("loan_amount"),
+  "education":str(data.get("education")).title().strip(),
+  "self_employed":str(data.get("self_employed").title().strip(),
+  "loan_term":data.get("loan_term"),
+  "residential_assets_value":data.get("residential_assets_value"),
+  "commercial_assets_value":data.get("commercial_assets_value"),
+  "luxury_assets_value":data.get("luxury_assets_value"),
+  "bank_asset_value":data.get("bank_asset_value")
+                      }
+    
 
