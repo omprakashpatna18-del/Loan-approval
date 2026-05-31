@@ -12,7 +12,6 @@ class Loan(BaseModel):
   no_of_dependents:int
   loan_amount:float
   cibil_score:int
-  loan_amount:float
   education:str
   self-employed:str
   loan_term:int
@@ -26,7 +25,6 @@ def helper(data:Loan):
     "no_of_dependents":data.get("no_of_dependents"),
     "loan_amount":data.get("loan_amount"),
     "cibil_score":data.get("cibil_score"),
-  "loan_amount":data.get("loan_amount"),
   "education":str(data.get("education")).title().strip(),
   "self_employed":str(data.get("self_employed").title().strip(),
   "loan_term":data.get("loan_term"),
