@@ -13,7 +13,7 @@ class Loan(BaseModel):
   loan_amount:float
   cibil_score:int
   education:str
-  self-employed:str
+  self_employed:str
   loan_term:int
   residential_assets_value:float
   commercial_assets_value:float
