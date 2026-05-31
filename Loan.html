@@ -310,8 +310,8 @@
 
   <div class="card-header">
     <div class="badge"><span class="badge-dot"></span> AI Powered</div>
-    <div class="card-title">Student Score Predictor</div>
-    <div class="card-sub">Fill in your details to predict your exam score</div>
+    <div class="card-title">Loan Predictor</div>
+    <div class="card-sub">Fill in your details to predict whether your loan will be approved or rejected</div>
   </div>
 
   <div class="form">
@@ -414,20 +414,19 @@ async function submitForm() {
     const inputs = document.querySelectorAll('.field input,.field select');
 
     const data = {
-      age: parseFloat(inputs[1].value),
-      gender: inputs[2].value.toLowerCase(),
-      course: inputs[3].value.toLowerCase(),
-      study_method: inputs[4].value.toLowerCase(),
-      study_hours: parseFloat(inputs[5].value),
-      sleep_hours: parseFloat(inputs[6].value),
-      class_attendance: parseFloat(inputs[7].value),
-      internet_access: inputs[8].value.toLowerCase(),
-      sleep_quality: inputs[9].value.toLowerCase(),
-      facility_rating: inputs[10].value.toLowerCase(),
-      exam_difficulty: inputs[11].value.toLowerCase(),
+      no_of_dependents: parseFloat(inputs[1].value),
+      loan_amount: parsefloat(inputs[2].value),
+      cibil_score:parsefloat(inputs[3].value),
+      education: inputs[4].value.toLowerCase(),
+      self_employed: inputs[5].value.toLowerCase(),
+      loan_term: parseFloat(inputs[6].value),
+      residential_assets_value: parseFloat(inputs[7].value),
+      commercial_assets_value: parsefloat(inputs[8].value),
+      luxury_assets_value: parsefloat(inputs[9].value),
+      bank_asset_value parsefloat(inputs[10].value)
     };
 
-    alert("Data: " + JSON.stringify(data)); // ← Debug
+    alert("Data: " + JSON.stringify(data)); 
 
     const res = await fetch(`${BACKEND_URL}/api/suggest`, {
       method: 'POST',
@@ -436,17 +435,15 @@ async function submitForm() {
     });
 
     const result = await res.json();
-    alert("Result: " + JSON.stringify(result)); // ← Debug
+    alert("Result: " + JSON.stringify(result)); 
 
-    localStorage.setItem('predicted_marks', result.predicted_marks);
-    localStorage.setItem('suggestions', result.suggestions);
-    window.location.href = 'AI mentor advice.html';
+    
 
   } catch(err) {
     alert("Error: " + err.message);
   }
  }
-  // ← Yeh add karo
+  
  
  </script>
  
