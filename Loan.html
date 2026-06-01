@@ -317,13 +317,13 @@
   <div class="form">
 
     <div class="field">
-      <label>Loan_id</label>
-      <input type="text" placeholder="e.g. STU-2024-001">
+      <label>Loan_id</label> 
+      <input type="text" placeholder="e.g. STU-2024-001"> 
     </div>
 
     <div class="row2">
       <div class="field">
-        <label>No of Dependents</label></label>
+        <label>No of Dependents</label></label> 
         <div class="select-wrap">
           <select>
             <option>0</option>
@@ -415,15 +415,15 @@ async function submitForm() {
 
     const data = {
       no_of_dependents: parseFloat(inputs[1].value),
-      loan_amount: parsefloat(inputs[2].value),
-      cibil_score:parsefloat(inputs[3].value),
-      education: inputs[4].value.toLowerCase(),
-      self_employed: inputs[5].value.toLowerCase(),
+      loan_amount: parsefloat(inputs[5].value),
+      cibil_score:parsefloat(inputs[4].value),
+      education: inputs[2].value.toTitleCase(),
+      self_employed: inputs[3].value.toTitleCase(),
       loan_term: parseFloat(inputs[6].value),
       residential_assets_value: parseFloat(inputs[7].value),
-      commercial_assets_value: parsefloat(inputs[8].value),
-      luxury_assets_value: parsefloat(inputs[9].value),
-      bank_asset_value parsefloat(inputs[10].value)
+      commercial_assets_value: parsefloat(inputs[10].value),
+      luxury_assets_value: parsefloat(inputs[8].value),
+      bank_asset_value parsefloat(inputs[9].value)
     };
 
     alert("Data: " + JSON.stringify(data)); 
