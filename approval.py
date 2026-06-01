@@ -8,7 +8,16 @@ from fastapi import APIRouter
 
 from pydantic import BaseModel
 model=joblib.load("best_model.joblib")
-app=FastAPI()
+app = FastAPI()
+
+# CORS — HTML pages ko allow karo
+app.add_middleware(
+CORSMiddleware,
+allow_origins=["*"],
+allow_methods=["*"],
+allow_headers=["*"],
+                )
+
 class Loan(BaseModel):
   no_of_dependents:int
   loan_amount:float
@@ -35,11 +44,11 @@ def helper(data):
   "bank_asset_value":data.get("bank_asset_value")
                       }
   return raw
-  @app.post("/predict")
-  def predict(data:dict):
-    model_df=helper(data)
-    predict=model.predict(model_df)[0]
-    return predict
+@app.post("/predict")
+def predict(data:dict):
+  model_df=helper(data)
+  predict=model.predict(model_df)[0]
+  return predict
     
     
 
