@@ -30,7 +30,6 @@ class Loan(BaseModel):
   
 def helper(data:Loan):
   raw = {
-        "raw = {
         "no_of_dependents": data.no_of_dependents,
         "education": data.education.title().strip(),
         "self_employed": data.self_employed.title().strip(),
