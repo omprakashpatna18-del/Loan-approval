@@ -33,7 +33,7 @@ def helper(data:Loan):
     "loan_amount":data.get("loan_amount"),
     "cibil_score":data.get("cibil_score"),
   "education":str(data.get("education")).title().strip(),
-  "self_employed":str(data.get("self_employed").title().strip(),
+  "self_employed":str(data.get("self_employed")).title().strip(),
   "loan_term":data.get("loan_term"),
   "residential_assets_value":data.get("residential_assets_value"),
   "commercial_assets_value":data.get("commercial_assets_value"),
