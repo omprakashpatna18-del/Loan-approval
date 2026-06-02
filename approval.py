@@ -1,16 +1,12 @@
 import uvicorn
 import joblib
 
-import google.genai as genai
-
 from fastapi import FastAPI
-from fastapi import APIRouter
 
 from pydantic import BaseModel
 model=joblib.load("best_model.joblib")
-app = FastAPI()
+app = FastAPI(title="Loan Predictor")
 
-# CORS — HTML pages ko allow karo
 app.add_middleware(
 CORSMiddleware,
 allow_origins=["*"],
