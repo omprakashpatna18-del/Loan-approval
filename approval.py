@@ -3,6 +3,7 @@ import joblib
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import pandas as pd
 
 model=joblib.load("best_model.joblib")
 app = FastAPI(title="Loan Predictor")
