@@ -45,8 +45,11 @@ def helper(data:Loan):
 def predict(data:Loan):
   raw_dict=helper(data)
   model_df = pd.DataFrame([raw_dict])
-  predict=model.predict(model_df)[0]
-  return predict
+  prediction=model.predict(model_df)[0]
+  prediction = model.predict(model_df)[0]
+  if hasattr(prediction, "item"):
+    prediction = prediction.item()
+  return prediction
     
     
 
