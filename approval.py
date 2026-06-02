@@ -43,7 +43,8 @@ def helper(data:Loan):
   return raw
 @app.post("/predict")
 def predict(data:Loan):
-  model_df=helper(data)
+  raw_dict=helper(data)
+  model_df = pd.DataFrame([raw_dict])
   predict=model.predict(model_df)[0]
   return predict
     
