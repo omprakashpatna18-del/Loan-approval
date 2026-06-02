@@ -40,7 +40,7 @@ def helper(data:Loan):
         "luxury_assets_value": data.luxury_assets_value,
         "bank_asset_value": data.bank_asset_value
     }
-    return raw
+  return raw
 @app.post("/predict")
 def predict(data:Loan):
   model_df=helper(data)
