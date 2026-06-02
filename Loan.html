@@ -414,16 +414,17 @@ async function submitForm() {
     const inputs = document.querySelectorAll('.field input,.field select');
 
     const data = {
-      no_of_dependents: parseFloat(inputs[1].value),
-      loan_amount: parseFloat(inputs[5].value),
-      cibil_score:parseFloat(inputs[4].value),
-      education: inputs[2].value,
-      self_employed: inputs[3].value,
-      loan_term: parseFloat(inputs[6].value),
-      residential_assets_value: parseFloat(inputs[7].value),
-      commercial_assets_value: parseFloat(inputs[10].value),
-      luxury_assets_value: parseFloat(inputs[8].value),
-      bank_asset_value: parseFloat(inputs[9].value)
+      no_of_dependents: parseFloat(inputs[2].value),
+      loan_amount: parseFloat(inputs[6].value),
+      cibil_score:parseFloat(inputs[5].value),
+      education: inputs[3].value,
+      self_employed: inputs[4].value,
+      loan_term: parseFloat(inputs[7].value),
+      residential_assets_value: parseFloat(inputs[8].value),
+      commercial_assets_value: parseFloat(inputs[11].value),
+      luxury_assets_value: parseFloat(inputs[9].value),
+      bank_asset_value: parseFloat(inputs[10].value),
+      income_annum: parseFloat(inputs[1].value)
     };
 
     alert("Data: " + JSON.stringify(data)); 
