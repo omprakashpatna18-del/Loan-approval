@@ -26,7 +26,7 @@ class Loan(BaseModel):
   luxury_assets_value:float
   bank_asset_value:float
   
-def helper(data):
+def helper(data:Loan):
   raw={
     "no_of_dependents":data.get("no_of_dependents"),
     "loan_amount":data.get("loan_amount"),
@@ -39,7 +39,7 @@ def helper(data):
   "luxury_assets_value":data.get("luxury_assets_value"),
   "bank_asset_value":data.get("bank_asset_value")
                       }
-  return raw
+  return pd.DataFrame([raw])
 @app.post("/predict")
 def predict(data:Loan):
   model_df=helper(data)
