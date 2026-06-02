@@ -51,7 +51,11 @@ def predict(data:Loan):
   prediction = model.predict(model_df)[0]
   if hasattr(prediction, "item"):
     prediction = prediction.item()
-  return prediction
+  if prediction==1:
+    answer="Approved"
+  else:
+    answer="Rejected"
+  return answer
     
     
 
