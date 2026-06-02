@@ -1,9 +1,9 @@
 import uvicorn
 import joblib
-
 from fastapi import FastAPI
-
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
 model=joblib.load("best_model.joblib")
 app = FastAPI(title="Loan Predictor")
 
@@ -41,7 +41,7 @@ def helper(data):
                       }
   return raw
 @app.post("/predict")
-def predict(data:dict):
+def predict(data:Loan):
   model_df=helper(data)
   predict=model.predict(model_df)[0]
   return predict
