@@ -19,6 +19,7 @@ class Loan(BaseModel):
   no_of_dependents:int
   loan_amount:float
   cibil_score:int
+  income_annum:float
   education:str
   self_employed:str
   loan_term:int
@@ -29,12 +30,14 @@ class Loan(BaseModel):
   
 def helper(data:Loan):
   raw = {
+        "raw = {
         "no_of_dependents": data.no_of_dependents,
-        "loan_amount": data.loan_amount,
-        "cibil_score": data.cibil_score,
         "education": data.education.title().strip(),
         "self_employed": data.self_employed.title().strip(),
+        "income_annum": data.income_annum,
+        "loan_amount": data.loan_amount,
         "loan_term": data.loan_term,
+        "cibil_score": data.cibil_score,
         "residential_assets_value": data.residential_assets_value,
         "commercial_assets_value": data.commercial_assets_value,
         "luxury_assets_value": data.luxury_assets_value,
